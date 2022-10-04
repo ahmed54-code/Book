@@ -1,0 +1,42 @@
+LEARN LARAVEL STEP BY STEP.
+===========================
+INSTALLATION OF LARAVEL.
+	composer create-project --prefer-dist laravel/laravel {websiteame} 7.* -vvv
+--------------------------------------------------------------------------------
+DATABASE: MIGRATION - create a new migration
+	php artisan make:migration create_author_table --create=author
+RUNING MIGRATION: 
+	php artisan migrate
+ROLLBACK MIGRATION: - delete your tables.
+	php artisan migrate:rollback
+--------------------------------------------------------------------------------
+DATABASE SEEDER: - test data for your project.
+	CREATE A MODEL
+		php artisan make:model Author
+	CREATE A FACTORY
+		php artisan make:factory AuthorFactory
+	CREATE A SEEDER
+		php artisan make:seeder AuthorTableSeeder
+	RUNNING SEEDER
+		composer dump-autoload
+		php artisan db:seed
+	REFRESH MIGRATION PLUS SEEDING.
+		php artisan migrate:refresh --seed
+--------------------------------------------------------------------------------
+
+	ADMIN PANEL INTEGRATION.
+	========================
+	1) go to resource->view and create admin folder.
+	2) create some section folder into admin folder.
+	3) defines your routes.
+	4) create some section controllers.
+		php artisan make:controller Admin/AuthorController
+	5) write atleast 3 methods into your controller.
+
+	Alternatively way to create controller.
+	=======================================
+	php artisan make:controller Admin/{AuthorController} --resource	
+	
+
+
+	
